@@ -1,4 +1,5 @@
 @use "../abstract/functions" as *;
+@use "../abstract/mixins" as *;
 
 .header {
   position: fixed;
@@ -13,9 +14,18 @@
   background-color: clr(light, 100);
   z-index: 9999;
 
+  @include breakpoint(sm) {
+    display: flex;
+    padding: 0 2rem 0 2.4rem;
+  }
+
   &__title {
     font-size: 3.318rem;
     font-weight: 400;
+
+    @include breakpoint(sm) {
+      font-size: 2.2rem;
+    }
   }
 
   &__nav {
@@ -32,6 +42,10 @@
         text-wrap: nowrap;
       }
     }
+
+    @include breakpoint(sm) {
+      display: none;
+    }
   }
 
   &__id {
@@ -45,6 +59,33 @@
 
     &__text {
       font-weight: 700;
+    }
+
+    &__burger {
+      height: 90%;
+      aspect-ratio: 1 / 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      display: none;
+
+      img {
+        max-width: 50%;
+        max-height: 50%;
+      }
+
+      &:hover {
+        background-color: rgba(clr(dark), 0.11);
+      }
+
+      &:active {
+        background-color: rgba(clr(dark), 0.2);
+      }
+
+      @include breakpoint(sm) {
+        display: flex;
+      }
     }
   }
 }

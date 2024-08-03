@@ -1,26 +1,36 @@
 @use "../abstract/functions" as *;
+@use "../abstract/mixins" as *;
 
 .section--qualities {
-  height: 30rem;
+  height: 36rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 6rem;
 
   &__container {
     width: 100%;
     display: flex;
     justify-content: space-evenly;
+    gap: 3rem;
 
     &__item {
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
+      text-align: center;
+      width: 15rem;
 
       &__number {
         font-size: 4.2rem;
         font-weight: 700;
         color: clr(primary, 200);
       }
+    }
+
+    @include breakpoint(sm) {
+      flex-wrap: wrap;
     }
   }
 }

@@ -1,4 +1,5 @@
 @use "../abstract/functions" as *;
+@use "../abstract/mixins" as *;
 
 .section--recs {
   display: flex;
@@ -10,12 +11,23 @@
     font-size: 2.2rem;
     text-align: center;
     color: clr(primary, 200);
+    @include breakpoint(sm) {
+      font-size: 1.8rem;
+      margin-bottom: 1.2rem;
+    }
   }
 
   &__title {
     font-size: 4rem;
     text-align: center;
     padding-bottom: 5rem;
+
+    @include breakpoint(sm) {
+      font-size: 3.2rem;
+      max-width: 80%;
+      padding-bottom: 2.8rem;
+      line-height: 3.6rem;
+    }
   }
 
   &__rec-list {
@@ -29,11 +41,19 @@
       display: flex;
       padding: 1rem;
       flex-direction: column;
-      gap: 5rem;
+      gap: 2rem;
       color: clr(dark);
       transition: all 0.4s ease;
       overflow: hidden;
       flex: 0 1 50rem;
+
+      @include breakpoint(sm) {
+        max-width: 80%;
+        color: clr(light, 100);
+        background-color: clr(primary);
+        border-radius: 0.8rem;
+        padding: 2rem;
+      }
 
       &__profile {
         display: flex;

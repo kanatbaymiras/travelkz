@@ -1,4 +1,5 @@
 @use "../abstract/functions" as *;
+@use "../abstract/mixins" as *;
 
 .footer {
   display: flex;
@@ -8,10 +9,19 @@
   height: 8.9rem;
   justify-content: space-between;
 
+  @include breakpoint(sm) {
+    padding: 0 4rem;
+    height: 7.2rem;
+  }
+
   &__title {
     color: clr(light, 200);
     font-weight: 400;
     font-size: 3.318rem;
+
+    @include breakpoint(sm) {
+      font-size: 2.3rem;
+    }
   }
 
   &__social-list {
@@ -19,6 +29,10 @@
     align-items: center;
     list-style: none;
     gap: 1rem;
+
+    @include breakpoint(sm) {
+      gap: 2rem;
+    }
 
     &__item {
       display: flex;
