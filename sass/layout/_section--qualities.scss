@@ -7,8 +7,9 @@
   align-items: center;
 
   &__container {
+    width: 100%;
     display: flex;
-    gap: 20rem;
+    justify-content: space-evenly;
 
     &__item {
       display: flex;

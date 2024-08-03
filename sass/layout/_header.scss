@@ -1,7 +1,7 @@
 @use "../abstract/functions" as *;
 
 .header {
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   display: flex;
@@ -11,6 +11,7 @@
   align-items: center;
   justify-content: space-between;
   background-color: clr(light, 100);
+  z-index: 9999;
 
   &__title {
     font-size: 3.318rem;

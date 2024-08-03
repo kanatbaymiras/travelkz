@@ -1,4 +1,5 @@
 @use "../abstract/functions" as *;
+@use "../abstract/mixins" as *;
 
 .section--hero {
   display: flex;
@@ -13,6 +14,11 @@
     align-items: center;
     justify-content: center;
     gap: 6rem;
+    max-width: 50%;
+
+    @include breakpoint("lg") {
+      max-width: 60%;
+    }
   }
 
   &__text {
@@ -20,7 +26,7 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    padding: 6rem;
+    padding: 3rem 6rem;
     border-radius: 0.8rem;
     background-color: rgba(clr(light, 100), 0.2);
     backdrop-filter: blur(2px) brightness(110%);
@@ -28,8 +34,13 @@
     gap: 1.8rem;
 
     &__title {
-      font-size: 7rem;
+      text-align: center;
+      font-size: 6rem;
       font-weight: 600;
+
+      @include breakpoint(lg) {
+        font-size: 5rem;
+      }
     }
 
     &__p {
@@ -38,17 +49,23 @@
       font-size: 2.2rem;
       font-weight: 400;
       text-transform: capitalize;
+
+      @include breakpoint(lg) {
+        font-size: 1.8rem;
+      }
     }
   }
 
   &__inputs {
     display: flex;
     align-items: center;
-    justify-content: center;
-    background-color: clr(light, 100);
-    width: 100%;
     padding: 0.8rem 1.2rem;
     border-radius: 0.8rem;
+    width: 100%;
+    justify-content: center;
+    background-color: clr(light, 100);
+
+    text-wrap: nowrap;
 
     svg {
       width: 1.5rem;
@@ -61,12 +78,20 @@
 
     &__form {
       display: flex;
-      flex-grow: 1;
       justify-content: space-between;
+      width: 100%;
 
       input {
         border: none;
-        padding: 0 1.6rem;
+        padding: 0 2.4rem;
+        @include breakpoint(lg) {
+          padding: 0;
+        }
+        width: 16rem;
+
+        @include breakpoint(lg) {
+          width: 12rem;
+        }
 
         &:nth-child(n + 2) {
           border-left: 1px solid clr(dark);

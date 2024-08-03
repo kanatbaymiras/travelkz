@@ -2,9 +2,9 @@
 
 .section--recs {
   display: flex;
-  height: 100svh;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 10rem;
 
   &__subtitle {
     font-size: 2.2rem;
@@ -27,12 +27,13 @@
     &__rec {
       position: relative;
       display: flex;
-      width: 50rem;
       padding: 1rem;
       flex-direction: column;
-      gap: 4rem;
+      gap: 5rem;
       color: clr(dark);
       transition: all 0.4s ease;
+      overflow: hidden;
+      flex: 0 1 50rem;
 
       &__profile {
         display: flex;
