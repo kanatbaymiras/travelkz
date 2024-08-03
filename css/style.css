@@ -70,7 +70,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url("../../assets/hero-bg.png") center/cover no-repeat;
+  background: url("../assets/hero-bg.png") center/cover no-repeat;
   height: 100svh;
 }
 .section--hero__content {
