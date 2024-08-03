@@ -1,0 +1,31 @@
+@use "../abstract/functions" as *;
+
+.footer {
+  display: flex;
+  align-items: center;
+  background-color: clr(primary, 200);
+  padding: 0 6rem;
+  height: 8.9rem;
+  justify-content: space-between;
+
+  &__title {
+    color: clr(light, 200);
+    font-size: 3.318rem;
+  }
+
+  &__social-list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 1rem;
+
+    &__item {
+      display: flex;
+      align-items: center;
+    }
+    &__link {
+      display: flex;
+      align-items: center;
+    }
+  }
+}

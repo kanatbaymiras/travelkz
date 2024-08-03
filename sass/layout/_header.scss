@@ -1,0 +1,49 @@
+@use "../abstract/functions" as *;
+
+.header {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  height: 6rem;
+  width: 100%;
+  padding: 0 5.5rem;
+  align-items: center;
+  justify-content: space-between;
+  background-color: clr(light, 100);
+
+  &__title {
+    font-size: 3.318rem;
+    font-weight: 400;
+  }
+
+  &__nav {
+    &__list {
+      list-style: none;
+      display: flex;
+      gap: 5rem;
+    }
+
+    &__link {
+      &:hover {
+        color: clr(primary, 100);
+        font-weight: 700;
+        text-wrap: nowrap;
+      }
+    }
+  }
+
+  &__id {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    &__lang {
+      width: 3rem;
+    }
+
+    &__text {
+      font-weight: 700;
+    }
+  }
+}

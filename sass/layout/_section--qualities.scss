@@ -1,0 +1,25 @@
+@use "../abstract/functions" as *;
+
+.section--qualities {
+  height: 30rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__container {
+    display: flex;
+    gap: 20rem;
+
+    &__item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      &__number {
+        font-size: 4.2rem;
+        font-weight: 700;
+        color: clr(primary, 200);
+      }
+    }
+  }
+}

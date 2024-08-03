@@ -1,0 +1,121 @@
+@use "../abstract/functions" as *;
+
+.section--hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("../../assets/hero-bg.png") center/cover no-repeat;
+  height: 100svh;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6rem;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 6rem;
+    border-radius: 0.8rem;
+    background-color: rgba(clr(light, 100), 0.2);
+    backdrop-filter: blur(2px) brightness(110%);
+    color: clr(light, 200);
+    gap: 1.8rem;
+
+    &__title {
+      font-size: 7rem;
+      font-weight: 600;
+    }
+
+    &__p {
+      text-align: center;
+      max-width: 70ch;
+      font-size: 2.2rem;
+      font-weight: 400;
+      text-transform: capitalize;
+    }
+  }
+
+  &__inputs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: clr(light, 100);
+    width: 100%;
+    padding: 0.8rem 1.2rem;
+    border-radius: 0.8rem;
+
+    svg {
+      width: 1.5rem;
+      margin: 0 1.6rem;
+
+      path:hover {
+        fill: clr(primary);
+      }
+    }
+
+    &__form {
+      display: flex;
+      flex-grow: 1;
+      justify-content: space-between;
+
+      input {
+        border: none;
+        padding: 0 1.6rem;
+
+        &:nth-child(n + 2) {
+          border-left: 1px solid clr(dark);
+
+          &:hover {
+            border-color: clr(primary);
+          }
+
+          &:focus {
+            &::placeholder {
+              color: transparent;
+            }
+            &:hover {
+              border-color: clr(dark);
+            }
+          }
+        }
+
+        &::placeholder {
+          padding-left: 0.4rem;
+          font-size: 1.6rem;
+          color: rgba(clr(dark), 0.8);
+        }
+
+        &:focus {
+          outline: none;
+
+          &::placeholder {
+            color: transparent;
+          }
+        }
+      }
+
+      button {
+        background-color: clr(primary, 100);
+        border: none;
+        border-radius: 1rem;
+        color: clr(light, 100);
+        padding: 1.8rem 3.2rem;
+        cursor: pointer;
+
+        &:hover {
+          background-color: rgba(clr(primary), 0.5);
+        }
+
+        &:active {
+          background-color: rgba(clr(primary), 0.8);
+        }
+      }
+    }
+  }
+}

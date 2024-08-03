@@ -1,0 +1,6 @@
+@use "./colors" as *;
+
+@function clr($color, $shade: base) {
+  $value: map-get(map-get($colors, $color), $shade);
+  @return $value;
+}
